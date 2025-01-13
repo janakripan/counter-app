@@ -9,7 +9,7 @@ const reducer = (state, action) =>{
     
     case 'increment':{
       const newCount = state.count + 1
-      const hasError = newCount>5
+      const hasError = newCount>100
       return{...state ,
          count:hasError? state.count: newCount,
          error: hasError? "Maximum reached" : null,
@@ -51,7 +51,7 @@ function App() {
 
         <div className='w-16 h-8 flex items-center justify-center rounded-lg border-2 mb-8'>{state.count}</div>
         
-        {state.error&&(<div className="w-fit mb-3 text-red-700">{state.error}</div>)}
+        {state.error&&(<div className="w-fit mb-3 text-red-500">{state.error}</div>)}
 
         <div className='flex flex-row gap-x-2 '>
           <button className='px-5 py-2 bg-blue-400 rounded-lg text-white'
