@@ -1,4 +1,4 @@
-import { useReducer } from 'react'
+import { useEffect, useReducer } from 'react'
 
 
 
@@ -10,18 +10,24 @@ const reducer = (state, action) =>{
     case 'increment':{
       const newCount = state.count + 1
       const hasError = newCount>100
+      
       return{...state ,
          count:hasError? state.count: newCount,
          error: hasError? "Maximum reached" : null,
+        
 
        }
+     
     }
     case 'decrement':{
       const newCount = state.count - 1
       const hasError = newCount<0
+      
       return{...state ,
          count:hasError? state.count: newCount,
          error: hasError? "Minimum reached" : null,
+         
+
 
        }
     }
@@ -30,8 +36,14 @@ const reducer = (state, action) =>{
   }
   
   
-
+  
 }
+
+
+
+
+
+
 
 
 
@@ -39,9 +51,21 @@ function App() {
   const [state, dispatch] = useReducer(reducer , {
     count: 0 ,
     error : null ,
+    message: null,
 
   })
-  console.log(state.count)
+
+  useEffect(()=>{
+    if (state.count === 0) return
+    if(state.count % 2 === 0 ){
+     alert("number is even");
+   } 
+   
+   },[state.count] )
+
+ 
+   
+  
 
   return (
     <>
@@ -67,6 +91,10 @@ function App() {
      </div>
     </>
   )
+  
 }
 
 export default App
+
+    
+
