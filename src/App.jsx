@@ -1,4 +1,5 @@
 import { useEffect, useReducer } from 'react'
+import ContactQr from './assets/components/ContactQr'
 
 
 
@@ -85,7 +86,7 @@ function App() {
                 onClick={()=>dispatch({type : 'increment'}) }
           > increment</button>
         </div>
-        
+        <ContactQr/>
       </div>
 
      </div>
