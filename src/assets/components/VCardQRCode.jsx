@@ -5,8 +5,9 @@ export default function VCardQRCode() {
   const [qrUrl, setQrUrl] = useState("");
 
   const contact = {
-    name: "nimna kp",
-    company: "scanntek ",
+    firstName: "Nimna",
+    lastName: "KP",
+    company: "",
     phone: "+971562411081",
     email: "",
   };
@@ -15,10 +16,11 @@ export default function VCardQRCode() {
     // Create vCard string
     const vCard = `BEGIN:VCARD
 VERSION:3.0
-FN:${contact.name}
+N:${contact.lastName};${contact.firstName};;;
+FN:${contact.firstName} ${contact.lastName}
 ORG:${contact.company}
 TEL;TYPE=CELL:${contact.phone}
-EMAIL:${contact.email}
+EMAIL;TYPE=INTERNET:${contact.email}
 END:VCARD`;
 
     try {
