@@ -5,10 +5,10 @@ export default function VCardQRCode() {
   const [qrUrl, setQrUrl] = useState("");
 
   const contact = {
-    name: "John Doe",
-    company: "My Company",
-    phone: "+1234567890",
-    email: "john@example.com",
+    name: "nimna kp",
+    company: "scanntek ",
+    phone: "+971562411081",
+    email: "",
   };
 
   const generateQRCode = async () => {
